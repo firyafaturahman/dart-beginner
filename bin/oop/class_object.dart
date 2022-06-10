@@ -1,8 +1,8 @@
 class PersegiPanjang {
-  double panjang = 0;
-  double lebar = 0;
+  double? panjang = 0;
+  double? lebar = 0;
 
   double hitungLuas() {
-    return panjang * lebar;
+    return panjang! * lebar!;
   }
 }

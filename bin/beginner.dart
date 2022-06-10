@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'oop/class_object.dart';
 
 void main(List<String> arguments) {
@@ -15,8 +17,8 @@ void main(List<String> arguments) {
 
   // membuat object kotak2
   kotak2 = PersegiPanjang();
-  kotak2.panjang = 9;
-  kotak2.lebar = 5;
+  kotak2.panjang = double.tryParse(stdin.readLineSync() ?? "");
+  kotak2.lebar = double.tryParse(stdin.readLineSync() ?? "");
 
   // luas kotak2
   double luasKotak2 = kotak2.hitungLuas();
