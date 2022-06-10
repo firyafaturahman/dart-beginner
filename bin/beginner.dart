@@ -1,6 +1,8 @@
 import 'dart:io';
 
-import 'oop/class_object.dart';
+import 'oop/encapsulation.dart';
+
+// import 'oop/class_object.dart';
 
 void main(List<String> arguments) {
   // materi class & object
@@ -23,4 +25,21 @@ void main(List<String> arguments) {
   // luas kotak2
   double luasKotak2 = kotak2.hitungLuas();
   print("Luas kotak2 = $luasKotak2");
+
+  // object segitiga 1
+  Segitiga segitiga1 = Segitiga();
+
+  segitiga1.alas = 24;
+  segitiga1.tinggi = 8;
+  double luasSegitiga1 = segitiga1.hitungLuas();
+
+  print("Luas Segitiga1 = $luasSegitiga1");
+
+  // object segitiga 2
+  Segitiga segitiga2 = Segitiga();
+  segitiga2.alas = double.tryParse(stdin.readLineSync() ?? "");
+  segitiga2.tinggi = double.tryParse(stdin.readLineSync() ?? "");
+  double luasSegitiga2 = segitiga2.hitungLuas();
+
+  print("Luas Segitiga2 = $luasSegitiga2");
 }
