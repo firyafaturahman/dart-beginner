@@ -2,6 +2,9 @@
 
 // import 'oop/encapsulation.dart';
 import 'oop/inheritance/hero.dart';
+import 'oop/inheritance/hero_archer.dart';
+import 'oop/inheritance/hero_magic.dart';
+import 'oop/inheritance/hero_malee.dart';
 import 'oop/inheritance/monster.dart';
 import 'oop/inheritance/monster_kecoa.dart';
 import 'oop/inheritance/monster_ubur.dart';
@@ -47,24 +50,68 @@ void main(List<String> arguments) {
 
   // print("Luas Segitiga2 = $luasSegitiga2");
 
-  Monster monster = Monster();
-  Hero hero = Hero();
+  /// Polymorphism
 
-  hero.healthPoint = -10;
-  monster.healthPoint = 10;
+  // Monster monster = MonsterKecoa();
+  Hero hero = HeroArcher();
+  // List<Monster> monsters = [];
 
-  print("Hero HP : ${hero.healthPoint}");
-  print("Monster HP : ${monster.healthPoint}");
-  print("Hero attack monster : ${hero.killAMonster()}");
-  print("Monster eat human : ${monster.eatHuman()}");
+  // monsters.add(MonsterUbur());
+  // monsters.add(MonsterKecoa());
+  // monsters.add(MonsterUbur());
 
-  MonsterKecoa kecoa = MonsterKecoa();
-  kecoa.healthPoint = 5;
-  print("Kecoa HP : ${kecoa.healthPoint}");
-  print("Kecoa fly : ${kecoa.fly()}");
+  // print((monster as MonsterKecoa).eatHuman());
 
-  MonsterUbur ubur = MonsterUbur();
-  ubur.healthPoint = 8;
-  print("Ubur HP : ${ubur.healthPoint}");
-  print("Ubur swim : ${ubur.swim()}");
+  // for (Monster m in monsters) {
+  //   if (m is MonsterKecoa) {
+  //     print(m.fly());
+  //   }
+  // }
+
+  /// Polymorphism
+  // List<Hero> heroes = [];
+  // heroes.add(HeroArcher());
+  // heroes.add(HeroMagic());
+  // heroes.add(HeroArcher());
+  // heroes.add(HeroMalee());
+
+  // print((hero as HeroArcher).arrowAttack());
+
+  // for (Hero h in heroes) {
+  //   if (h is HeroMagic) {
+  //     print(h.magicAttack());
+  //   }
+  // }
+
+  // hero.healthPoint = -10;
+  // monster.healthPoint = 10;
+
+  // print("Hero HP : ${hero.healthPoint}");
+  // print("Monster HP : ${monster.healthPoint}");
+  // print("Hero attack monster : ${hero.killAMonster()}");
+  // print("Monster eat human : ${monster.eatHuman()}");
+
+  // MonsterKecoa kecoa = MonsterKecoa();
+  // kecoa.healthPoint = 5;
+  // print("Kecoa HP : ${kecoa.healthPoint}");
+  // print("Kecoa fly : ${kecoa.fly()}");
+
+  // MonsterUbur ubur = MonsterUbur();
+  // ubur.healthPoint = 8;
+  // print("Ubur HP : ${ubur.healthPoint}");
+  // print("Ubur swim : ${ubur.swim()}");
+
+  /// Abstract
+  List<Hero> heros = [];
+  heros.add(HeroArcher());
+  heros.add(HeroMagic());
+  heros.add(HeroMalee());
+  heros.add(HeroArcher());
+
+  for (Hero h in heros) {
+    if (h is HeroMagic) {
+      print(h.killAMonster());
+      print(h.move());
+    }
+  }
 }
