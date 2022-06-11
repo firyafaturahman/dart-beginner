@@ -8,6 +8,7 @@ import 'oop/inheritance/hero_malee.dart';
 import 'oop/inheritance/monster.dart';
 import 'oop/inheritance/monster_kecoa.dart';
 import 'oop/inheritance/monster_ubur.dart';
+import 'oop/inheritance/monster_ucoa.dart';
 
 // import 'oop/class_object.dart';
 
@@ -102,16 +103,30 @@ void main(List<String> arguments) {
   // print("Ubur swim : ${ubur.swim()}");
 
   /// Abstract
-  List<Hero> heros = [];
-  heros.add(HeroArcher());
-  heros.add(HeroMagic());
-  heros.add(HeroMalee());
-  heros.add(HeroArcher());
+  // List<Hero> heros = [];
+  // heros.add(HeroArcher());
+  // heros.add(HeroMagic());
+  // heros.add(HeroMalee());
+  // heros.add(HeroArcher());
 
-  for (Hero h in heros) {
-    if (h is HeroMagic) {
-      print(h.killAMonster());
-      print(h.move());
+  // for (Hero h in heros) {
+  //   if (h is HeroMagic) {
+  //     print(h.killAMonster());
+  //     print(h.move());
+  //   }
+  // }
+
+  /// Interface
+  List<Monster> monsters = [];
+  monsters.add(MonsterKecoa());
+  monsters.add(MonsterUbur());
+  monsters.add(MonsterKecoa());
+  monsters.add(MonsterUcoa());
+
+  for (Monster m in monsters) {
+    if (m is MonsterUcoa) {
+      print(m.swim());
+      print(m.ucoaAttack());
     }
   }
 }
