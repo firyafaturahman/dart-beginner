@@ -1,6 +1,10 @@
 // import 'dart:io';
 
 // import 'oop/encapsulation.dart';
+import 'oop/constructor/child.dart';
+import 'oop/constructor/first_child.dart';
+import 'oop/constructor/person.dart';
+import 'oop/constructor/second_child.dart';
 import 'oop/inheritance/hero.dart';
 import 'oop/inheritance/hero_archer.dart';
 import 'oop/inheritance/hero_magic.dart';
@@ -54,7 +58,7 @@ void main(List<String> arguments) {
   /// Polymorphism
 
   // Monster monster = MonsterKecoa();
-  Hero hero = HeroArcher();
+  // Hero hero = HeroArcher();
   // List<Monster> monsters = [];
 
   // monsters.add(MonsterUbur());
@@ -117,16 +121,54 @@ void main(List<String> arguments) {
   // }
 
   /// Interface
-  List<Monster> monsters = [];
-  monsters.add(MonsterKecoa());
-  monsters.add(MonsterUbur());
-  monsters.add(MonsterKecoa());
-  monsters.add(MonsterUcoa());
+  // List<Monster> monsters = [];
+  // monsters.add(MonsterKecoa());
+  // monsters.add(MonsterUbur());
+  // monsters.add(MonsterKecoa());
+  // monsters.add(MonsterUcoa());
 
-  for (Monster m in monsters) {
-    if (m is MonsterUcoa) {
-      print(m.swim());
-      print(m.ucoaAttack());
+  // for (Monster m in monsters) {
+  //   if (m is MonsterUcoa) {
+  //     print(m.swim());
+  //     print(m.ucoaAttack());
+  //     print(m.jump(29));
+  //   }
+  // }
+
+  // Hero hero = HeroMalee();
+  // hero.healthPoint = 10;
+
+  // print(hero.healthPoint);
+  // print((hero as HeroMalee).swordAttack());
+
+  // List<Hero> heros = [];
+  // heros.add(HeroMagic());
+  // heros.add(HeroMalee());
+  // heros.add(HeroArcher());
+
+  // for (Hero h in heros) {
+  //   if (h is HeroMagic) {
+  //     print(h.fly());
+  //   }
+  // }
+
+  List<Person> persons = [];
+  persons.add(FirstChild());
+  persons.add(SecondChild());
+
+  Person person = SecondChild();
+  var second = (person as SecondChild).hobby();
+  print(second);
+
+  for (Person p in persons) {
+    if (p is FirstChild) {
+      print(p.ages = 18);
+      print(p.gender = "Laki - Laki");
+      print(p.name = "Joko");
+      print(p.drink());
+      print(p.eat());
+      print(p.hobby());
+      print(p.style());
     }
   }
 }

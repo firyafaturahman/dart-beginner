@@ -1,0 +1,3 @@
+mixin DrinkMixin {
+  String drink();
+}
